@@ -7,6 +7,7 @@ let tamanho = Number.parseInt(tamanhoArray.value)
 btnFormar.onclick = () => construirArray(tamanhoArray.value);
 
 function construirArray(tamanho) {
+    luidyArray.splice(0, luidyArray.length); //Array é esvaziado pois caso o segundo número que o usuário digite seja menor que o primeiro, o array maior seria mantido
     for (i = 1; i <= tamanho; i++) {
         if (i % 5 == 0 && i % 9 == 0) {
             luidyArray[i-1] = "LuidyMoura";

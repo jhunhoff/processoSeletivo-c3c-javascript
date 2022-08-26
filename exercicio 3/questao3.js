@@ -5,6 +5,7 @@ let resposta = document.getElementById("resposta");
 btnAprovacao.onclick = () => analisarAprovacao(notaAluno.value);
 
 function analisarAprovacao(notaAluno) {
+    //feita a conversão para número para poder fazer os cálculos e avaliar se é NaN
     let notaFloat = Number.parseFloat(notaAluno);
     if (notaFloat < 0 || notaFloat > 100 || isNaN(notaFloat)) {
         resposta.innerHTML = "Digite uma nota válida no intervalo de 0 a 100.";
