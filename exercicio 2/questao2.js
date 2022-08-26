@@ -9,7 +9,7 @@ let raizes = [];
 btnCalcular.onclick = () => calcularRaizes(coeficienteA.value, coeficienteB.value, coeficienteC.value);
 
 function calcularRaizes(coefA, coefB, coefC) {
-    if (coefA != "" && coefB != "" && coefC != "") {
+    if (coefA != "" && coefB != "" && coefC != "" && coefA != 0) {
         delta = (coefB * coefB) - (4 * coefA * coefC);
         if (delta < 0) {
             resposta.innerHTML = "Delta é negativo: não possui raízes reais."
@@ -22,10 +22,11 @@ function calcularRaizes(coefA, coefB, coefC) {
                 resposta.innerHTML = `As raízes da função são ${raizes[0]} e ${raizes[1]}.`
             }
         }
+    } else if (coefA == 0) {
+        resposta.innerHTML = `O valor do coeficiente A não pode ser 0.`
     } else {
         resposta.innerHTML = `Digite valores para todos os coeficientes.`
     }
-
 }
 
 
