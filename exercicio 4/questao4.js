@@ -1,13 +1,16 @@
 let tamanhoArray = document.getElementById("tamanhoArray");
 let btnFormar = document.getElementById("construirArray");
 let resposta = document.getElementById("resposta");
-let luidyArray = [];
 let tamanho = Number.parseInt(tamanhoArray.value)
 
 btnFormar.onclick = () => construirArray(tamanhoArray.value);
 
 function construirArray(tamanho) {
-    luidyArray.splice(0, luidyArray.length); //Array é esvaziado pois caso o segundo número que o usuário digite seja menor que o primeiro, o array maior seria mantido
+   /* Array foi declarado dentro da função pra ter escopo do bloco da função e ser reinicializado toda vez que o botão for clicado
+    se for declarado fora da função, teria que esvaziar o array toda vez que clicasse no botão para não dar problema caso o segundo tamanho de array
+    desejado seja menor que o primeiro
+   */
+    let luidyArray = []; 
     for (i = 1; i <= tamanho; i++) {
         if (i % 5 == 0 && i % 9 == 0) {
             luidyArray[i-1] = "LuidyMoura";
